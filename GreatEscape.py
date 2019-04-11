@@ -9,6 +9,7 @@ The goal of this project is to create an escape room for individuals to go throu
 @author: jl
 """
 
+# create space for player to save name, keep track of hints, and maybe keep track of current location
 class player:
     def __init__(self, name, hints, position):
         self.name = name
@@ -20,6 +21,9 @@ class player:
 player.position = currentroom
 
 player.hints = knowledge
+
+# create each object and add prompts for interacting with each object
+# when the player runs into a hint, it should be saved to their notes stash
 
 def chair:
     print("You approach the chair...")
@@ -49,3 +53,7 @@ def safe:
 def pencil:
     print("")
 
+#create a main that prompts them to interact with the room "what do you want to inspect..."
+#always give the option to check stored hints
+
+#we can make all of this ugly then make it pretty when it works lol
