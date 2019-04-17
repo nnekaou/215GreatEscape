@@ -14,18 +14,16 @@ class player:
     def __init__(self, name, hints, position):
         self.name = name
         self.hints = hints
-        self.position = position
-    
-    
 
-player.position = currentroom
+# ^need to know how to set up player info of if it matters
 
-player.hints = knowledge
+hints = []
 
 # create each object and add prompts for interacting with each object
 # when the player runs into a hint, it should be saved to their notes stash
 
 def chair(location):
+    chair_hint = "'INSIDE DESK'"
     print("You approach the chair...")
     location = print(input("Would you like to check the top, side, or bottom...? (top/side/bottom) "))
     if location == "top":
@@ -34,20 +32,23 @@ def chair(location):
         print("The side isn't anything special... the metal looks worn out...")
     elif location == "bottom":
         print("You find a piece of paper stuck to the chair with a piece of gum and you pull it out.")
-        print("The paper reads 'INSIDE DESK'")
+        print("The paper reads " + chair_hint)
         #Add this clue to note stash not sure how to do that lol!!!
+        hints.append(chair_hint)
 
-def table:
+def table():
+    table_hint = "'In the cabinet lies the answers'"
     print("It's a pretty average table ... there are many like it in this classroom but you are drawn to this one")
     location = print(input("Would you like to check the top, inside, or bottom...? (top/inside/bottom) "))
     if location == "top":
         print("There's nothing suspicious on this table. It's a little smudged and there's there's some eraser shavings")
     elif location == "inside":
-        print("You find a piece of paper that states 'The cabinet lies the answers' ")
+        print("You find a piece of paper that states " + table_hint)
+        hints.append(table_hint)
     elif location == "bottom":
         print("You touch the rough bottom of the desk and feel some bumpy areas only to realize it's old gum.")
 
-def teacher_desk:
+def teacher_desk():
     print("You approch the teacher's desk...")
     location = print(input("Would you like to check the top, inside, or bottom...? (top/inside/bottom) "))
     if location == "top":
@@ -62,28 +63,38 @@ def teacher_desk:
     elif location == "bottom":
         print("There's nothing but dust bunnies down there... nothing too exciting. ")
 
-def board:
+def board():
+    board_hint = "'To truly be free you must first find the keys to your success.'"
     print("You walk up to the smartboard and look at it...")
-    choice = print(input("Would you like to turn it on...? (y/n) "))
+    choice = input("Would you like to turn it on...? (y/n) ")
+
     if choice == "y":
         print("The smartboard slowly turns on and reveals another clue!...")
-        print("On the board it says: 'To truly be free you must first find the keys to your success.' ")
+        print("On the board it says: " + board_hint)
         print("Oddly... the screen fades back to black... that's weird maybe it's broken.")
-        #Add this to the hints
+        hints.append(board_hint)
+
     elif choice == "n":
         print("The smartboard is off and will continue to stay off")
 
-def laptop:
+def laptop():
     print("You inspect the laptop...")
-    choice = print(input("Would you like turn it on...? (y/n) ")
+    choice = input("Would you like turn it on...? (y/n) ")
+  
     if choice == "y":
         print("You attempt to turn on the laptop but sadly it is protected by a password")
+        enter_laptop = input("Can you crack the code? Enter the password...")
+        if enter_laptop == "Stevens1870":
+            print("The laptop opens to a screen with a background that reads '0264'")
+        else:
+            print("The laptop screen goes black and maniacal laughter echoes around you")
         #add another password element for this
     elif choice == "n":
         print("You inspect it... it's odd that somebody left their laptop here huh?... ")
-def cabinet:
+
+def cabinet():
     print("You walk over to the cabinet...")
-    location = print(input("Would you like to check the top, inside, or bottom...? (top/inside/bottom) "))
+    location = input("Would you like to check the top, inside, or bottom...? (top/inside/bottom) ")
     if location == "top":
         print("It's just some old supplies and stuff, nothing else important here... ")
     elif location == "inside":
@@ -92,20 +103,21 @@ def cabinet:
         print("The cabinet legs left marks on the ground... looks like it was dragged here")
         #make option to move cabinet or not
 #make it so the option for the safe only shows up after the cabinet is unlocked. Also should we make different def's for like "inside the cabinet" and stuff like that "or inside laptop"
-def safe:
+
+def safe():
     print("You look at the safe...")
-    choice = print(input("Would you like to open it...? (y/n)"))
+    choice = input("Would you like to open it...? (y/n)")
     if choice == "y":
-        code = print(input("You are prompted with a 4 number pinpad... What are those 4 numbers...? (Enter 4 numbers) ")
+        code = input("You are prompted with a 4 number pinpad... What are those 4 numbers...? (Enter 4 numbers) ")
         if code == "0264":
-        	#TODO
+        	print("YOU FOUND THE KEY! Congratulations and have a beautiful break(:")
         else:
         	print("Hmm that didn't seem to work... ")
     elif choice == "n":
         print("You ignore the safe... ")
-def pencil:
+def pencil():
     print("You inspect the pencil...")
-    location = print(input("Would you like to take the pencil...? (y/n) "))
+    choice = input("Would you like to take the pencil...? (y/n) ")
     if choice == "y":
         print("You take the pencil and add it to your inventory")
         #add to inventory and the option to go to the pencil disappears
@@ -115,14 +127,14 @@ def pencil:
 #create a main that prompts them to interact with the room "what do you want to inspect..."
 #always give the option to check stored hints
 
-#we can make all of this ugly then make it pretty when it works lol
-def main:
-    print("*Sound of door slamming closed*")
-    print("“Huh? Why am I in my Software Engineering classroom?”")
-    print("You see a note... would you like to pick it up?")
-    begin.lowercase() = print(input("Yes/No"))
-    if begin == "yes":
-        print("Somewhere in this room, there lies a key, you need this key to escape, you can try to break the door but it won’t work, no one is coming for you, solve the puzzle and it is your only way to escape >:D
-    else:
-        print("Then I guess you'll be here forever...")
+# def main():
+#     print("*Sound of door slamming closed*")
+#     print("“Huh? Why am I in my Software Engineering classroom?”")
+#     print("You see a note... would you like to pick it up?")
+#     begin = input("Yes/No")
+
+#     if begin.lowercase() == "yes":
+#         print("Somewhere in this room, there lies a key, you need this key to escape, you can try to break the door but it won’t work, no one is coming for you, solve the puzzle and it is your only way to escape >:D
+#     else:
+#         print("Then I guess you'll be here forever...")
     # if the user enters in a location that is not an option "There is nothing there..."
