@@ -25,7 +25,7 @@ player.hints = knowledge
 # create each object and add prompts for interacting with each object
 # when the player runs into a hint, it should be saved to their notes stash
 
-def chair:
+def chair(location):
     print("You approach the chair...")
     location = print(input("Would you like to check the top, side, or bottom...?"))
     if location == "top":
@@ -57,3 +57,14 @@ def pencil:
 #always give the option to check stored hints
 
 #we can make all of this ugly then make it pretty when it works lol
+
+def main:
+    print("*Sound of door slamming closed*")
+    print("“Huh? Why am I in my Software Engineering classroom?”")
+    print("You see a note... would you like to pick it up?")
+    begin.lowercase() = print(input("Yes/No"))
+    if begin == "yes":
+        print("Somewhere in this room, there lies a key, you need this key to escape, you can try to break the door but it won’t work, no one is coming for you, solve the puzzle and it is your only way to escape >:D
+    else:
+        print("Then I guess you'll be here forever...")
+    # if the user enters in a location that is not an option "There is nothing there..."
