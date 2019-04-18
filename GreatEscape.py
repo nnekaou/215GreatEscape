@@ -22,7 +22,7 @@ hints = []
 # create each object and add prompts for interacting with each object
 # when the player runs into a hint, it should be saved to their notes stash
 
-def chair(location):
+def chair():
     chair_hint = "'INSIDE DESK'"
     print("You approach the chair...")
     location = input("Would you like to check the top, side, or bottom...? (top/side/bottom) ")
@@ -132,27 +132,29 @@ def main():
     print("*Sound of door slamming closed*")
     print("“Huh? Why am I in my Software Engineering classroom?”")
     print("You see a note... would you like to pick it up?")
-    begin = input("Yes/No")
+    begin = input("yes/no... ")
 
-    if begin.lowercase() == "yes":
+    if begin.lower() == "yes":
         print("Somewhere in this room, there lies a key, you need this key to escape, you can try to break the door but it won’t work, no one is coming for you, solve the puzzle and it is your only way to escape >:D")
         print("You begin to explore the room...")
         print("You can exit this game at any time by entering 'exit' and check your list of hints at any time by entering 'hints'")
         explore = input("You being to explore the room... what would you to check first?")
         while explore != "exit":
             if explore == "chair":
-                print("i like stars")
+                chair()
             elif explore == "table":
-                print("i like stars")
+                table()
             elif explore == "teacher's desk":
-                print("i like stars")
+                teacher_desk()
             elif explore == "board":
-                print("i like stars")
+                board()
             elif explore == "laptop":
-                print("i like stars")
+                laptop()
             elif explore == "cabinet":
-                print("i like stars")
+                cabinet()
             explore = input("A small violin plays in the background... you begin to approach the... (enter next object)")
     else:
         print("Then I guess you'll be here forever...")
     # if the user enters in a location that is not an option "There is nothing there..."
+
+main()
