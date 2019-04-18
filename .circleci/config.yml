@@ -40,4 +40,4 @@ jobs:
 
       - run:
           name: run tests
-          command: python -m unittest discover -p *Test*  -t test -s lib/testt 
+          command: python -m unittest discover -p *Test*  -t test -s test
