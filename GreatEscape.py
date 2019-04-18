@@ -25,7 +25,7 @@ hints = []
 def chair(location):
     chair_hint = "'INSIDE DESK'"
     print("You approach the chair...")
-    location = print(input("Would you like to check the top, side, or bottom...? (top/side/bottom) "))
+    location = input("Would you like to check the top, side, or bottom...? (top/side/bottom) ")
     if location == "top":
         print("It's a slightly worn out chair, nothing special on top. The seats still a little warm...")
     elif location == "side":
@@ -39,7 +39,8 @@ def chair(location):
 def table():
     table_hint = "'In the cabinet lies the answers'"
     print("It's a pretty average table ... there are many like it in this classroom but you are drawn to this one")
-    location = print(input("Would you like to check the top, inside, or bottom...? (top/inside/bottom) "))
+    
+    location = input("Would you like to check the top, inside, or bottom...? (top/inside/bottom) ")
     if location == "top":
         print("There's nothing suspicious on this table. It's a little smudged and there's there's some eraser shavings")
     elif location == "inside":
@@ -50,10 +51,10 @@ def table():
 
 def teacher_desk():
     print("You approch the teacher's desk...")
-    location = print(input("Would you like to check the top, inside, or bottom...? (top/inside/bottom) "))
+    location = input("Would you like to check the top, inside, or bottom...? (top/inside/bottom) ")
     if location == "top":
         print("Here lies the laptop and some papers...")
-        choice = print(input("Would you like to inspect the laptop or papers...? (laptop/papers) "))
+        choice = input("Would you like to inspect the laptop or papers...? (laptop/papers) ")
         if choice == "laptop":
         	laptop()
         elif choice == "papers":
@@ -127,14 +128,31 @@ def pencil():
 #create a main that prompts them to interact with the room "what do you want to inspect..."
 #always give the option to check stored hints
 
-# def main():
-#     print("*Sound of door slamming closed*")
-#     print("“Huh? Why am I in my Software Engineering classroom?”")
-#     print("You see a note... would you like to pick it up?")
-#     begin = input("Yes/No")
+def main():
+    print("*Sound of door slamming closed*")
+    print("“Huh? Why am I in my Software Engineering classroom?”")
+    print("You see a note... would you like to pick it up?")
+    begin = input("Yes/No")
 
-#     if begin.lowercase() == "yes":
-#         print("Somewhere in this room, there lies a key, you need this key to escape, you can try to break the door but it won’t work, no one is coming for you, solve the puzzle and it is your only way to escape >:D
-#     else:
-#         print("Then I guess you'll be here forever...")
+    if begin.lowercase() == "yes":
+        print("Somewhere in this room, there lies a key, you need this key to escape, you can try to break the door but it won’t work, no one is coming for you, solve the puzzle and it is your only way to escape >:D")
+        print("You begin to explore the room...")
+        print("You can exit this game at any time by entering 'exit' and check your list of hints at any time by entering 'hints'")
+        explore = input("You being to explore the room... what would you to check first?")
+        while explore != "exit":
+            if explore == "chair":
+                print("i like stars")
+            elif explore == "table":
+                print("i like stars")
+            elif explore == "teacher's desk":
+                print("i like stars")
+            elif explore == "board":
+                print("i like stars")
+            elif explore == "laptop":
+                print("i like stars")
+            elif explore == "cabinet":
+                print("i like stars")
+            explore = input("A small violin plays in the background... you begin to approach the... (enter next object)")
+    else:
+        print("Then I guess you'll be here forever...")
     # if the user enters in a location that is not an option "There is nothing there..."
