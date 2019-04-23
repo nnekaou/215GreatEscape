@@ -27,19 +27,22 @@ options = ['chair','table','teacher\'s desk','board','laptop','cabinet','hints']
 def chair():
     chair_hint = "'HTML, but make it Proper'"
     print("You approach the chair...")
+    print("  i______i\n  I______I\n  I      I\n  I______I\n /      /I\n(______( I\nI ^    I ^\nI      I")
     if 'chair' in options:
         options.remove('chair')
     while True:
         location = input("Would you like to check the top, side, or bottom...? (top/side/bottom/back) ")
         if location == "top":
             print("It's a slightly worn out chair, nothing special on top. The seats still a little warm...")
+            time.sleep(2)
         elif location == "side":
             print("The side isn't anything special... the metal looks worn out...")
+            time.sleep(2)
         elif location == "bottom":
             print("You find a piece of paper stuck to the chair with a piece of gum and you pull it out.")
             print("The paper reads " + chair_hint)
-            #Add this clue to note stash not sure how to do that lol!!!
             hints.append(chair_hint)
+            time.sleep(2)
         elif location =="back":
             break
         else:
@@ -47,6 +50,7 @@ def chair():
 
 def table():
     table_hint = "'It is when it came first but now it is second, it started the clock for us all to be beckoned'"
+    
     print("It's a pretty average table ... there are many like it in this classroom but you are drawn to this one")
     if 'table' in options:
         options.remove('table')
@@ -57,6 +61,7 @@ def table():
             choice = input("You go to inspect the... (paper|pencil)")
             if choice == "paper":
                 print("It looks like a cheat sheet with only useless information... ")
+                time.sleep(2)
             elif choice == "pencil":
                 pencil()
             else:
@@ -64,8 +69,10 @@ def table():
         elif location == "inside":
             print("You find a piece of paper that states: " + table_hint)
             hints.append(table_hint)
+            time.sleep(2)
         elif location == "bottom":
             print("You touch the rough bottom of the desk and feel some bumpy areas only to realize it's old gum.")
+            time.sleep(2)
         elif location == "back":
             break
         else:
@@ -84,12 +91,16 @@ def teacher_desk():
                 laptop()
             elif choice == "papers":
                 print("It's just some notes that professor left about class... ")
+                time.sleep(2)
             else:
                 print("A rumbling sound comes from.... is that the cabinet?")
+                time.sleep(2)
         elif location == "inside":
             print("The inside seems to be locked and needs a key... ")
+            time.sleep(2)
         elif location == "bottom":
             print("There's nothing but dust bunnies down there... nothing too exciting. ")
+            time.sleep(2)
         elif location == "back":
             break
         else:
@@ -101,14 +112,16 @@ def board():
     if 'board' in options:
         options.remove('board')
     while True:
-        choice = input("Would you like to turn it on...? (y/n/back) ")
-        if choice == "y":
+        choice = input("Would you like to turn it on...? (yes|no|back) ")
+        if choice == "yes":
             print("The smartboard slowly turns on and reveals another clue!...")
             print("On the board it says: " + board_hint)
             print("Oddly... the screen fades back to black... that's weird maybe it's broken.")
             hints.append(board_hint)
-        elif choice == "n":
+            time.sleep(2)
+        elif choice == "no":
             print("The smartboard is off and will continue to stay off")
+            time.sleep(2)
         elif choice == "back":
             break
         else:
@@ -116,6 +129,7 @@ def board():
 
 def laptop():
     print("You inspect the laptop...")
+    print("   .===========.       \n   |           |        \n   |   |***|   |        \n   |           |        \n   |___________|        \n   |_________-_|_,-.    \n  [_____________]   )   \n  .,,,,,,,,,, ,,.  (_   \n /,,,,,,,,,,, ,,,\ (>`\ \n(______.-``-._____) \__)")
     if 'laptop' in options:
         options.remove('laptop')
     while True:
@@ -125,11 +139,15 @@ def laptop():
             enter_laptop = input("Can you crack the code? Enter the password...")
             if enter_laptop == "Stevens1870":
                 print("The laptop opens to a screen with a background that reads '0264'")
+                print("The cabinet grumbles and slowly opens...")
+                options.append('safe')
+                time.sleep(3)
             else:
                 print("The laptop screen goes black and maniacal laughter echoes around you")
-            #add another password element for this
+                time.sleep(2)
         elif choice == "no":
             print("You inspect it... it's odd that somebody left their laptop here huh?... ")
+            time.sleep(2)
         elif choice == "back":
             break
         else:
@@ -143,19 +161,20 @@ def cabinet():
         location = input("Would you like to check the top, inside, or bottom...? (top|inside|bottom|back) ")
         if location == "top":
             print("It's just some old supplies and stuff, nothing else important here... ")
+            time.sleep(2)
         elif location == "inside":
-            print("The cabinet is locked... There's a small keyhole next to it")
+            print("Looks like it might need a little budging")
+            time.sleep(2)
         elif location == "bottom":
             print("The cabinet legs left marks on the ground... looks like it was dragged here")
-            #make option to move cabinet or not
-    #make it so the option for the safe only shows up after the cabinet is unlocked. Also should we make different def's for like "inside the cabinet" and stuff like that "or inside laptop"
+            time.sleep(2)
         elif location == "back":
             break
         else:
             print("You inspect the cabinet again")
 
 def safe():
-    print("You look at the safe...")
+    print("A safe inside the cabinet? Who would have thought...")
     if 'safe' in options:
         options.remove('safe')
     while True:
@@ -180,7 +199,6 @@ def pencil():
         choice = input("Would you like to take the pencil...? (yes|no|back) ")
         if choice == "yes":
             print("It looks like someone scratched a message... :" + pencil_hint)
-            #add to inventory and the option to go to the pencil disappears
         elif choice == "no":
             print("You leave the pencil...")
         elif choice == "back":
