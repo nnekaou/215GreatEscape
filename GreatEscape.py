@@ -191,7 +191,7 @@ def main():
                 cabinet()
             elif explore == "pencil":
                 pencil()
-            explore = input("A small violin plays in the background... you begin to approach the... (enter next object)")
+            explore = input("You check but there is nothing there. A small violin plays in the background... you begin to approach the... (enter next object)")
     else:
         print("Then I guess you'll be here forever...")
     # if the user enters in a location that is not an option "There is nothing there..."
