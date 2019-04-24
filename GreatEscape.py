@@ -41,7 +41,8 @@ def chair():
         elif location == "bottom":
             print("You find a piece of paper stuck to the chair with a piece of gum and you pull it out.")
             print("The paper reads " + chair_hint)
-            hints.append(chair_hint)
+            if chair_hint not in hints:
+                hints.append(chair_hint)
             time.sleep(2)
         elif location =="back":
             break
@@ -68,7 +69,8 @@ def table():
                 print("A rumbling sound comes from.... is that the cabinet?")
         elif location == "inside":
             print("You find a piece of paper that states: " + table_hint)
-            hints.append(table_hint)
+            if table_hint not in hints:
+                hints.append(table_hint)
             time.sleep(2)
         elif location == "bottom":
             print("You touch the rough bottom of the desk and feel some bumpy areas only to realize it's old gum.")
@@ -117,7 +119,8 @@ def board():
             print("The smartboard slowly turns on and reveals another clue!...")
             print("On the board it says: " + board_hint)
             print("Oddly... the screen fades back to black... that's weird maybe it's broken.")
-            hints.append(board_hint)
+            if board_hint not in hints:
+                hints.append(board_hint)
             time.sleep(2)
         elif choice == "no":
             print("The smartboard is off and will continue to stay off")
@@ -199,6 +202,8 @@ def pencil():
         choice = input("Would you like to take the pencil...? (yes|no|back) ")
         if choice == "yes":
             print("It looks like someone scratched a message... :" + pencil_hint)
+            if pencil_hint not in hints:
+                hints.append(pencil_hint)
         elif choice == "no":
             print("You leave the pencil...")
         elif choice == "back":
@@ -219,7 +224,7 @@ def main():
         print("Somewhere in this room, there lies a key, you need this key to escape, you can try to break the door but it won’t work, no one is coming for you, solve the puzzle and it is your only way to escape >:D")
         print("You begin to explore the room...")
         print("You can exit this game at any time by entering 'exit' and check your list of hints at any time by entering 'hints'")
-        explore = input("You being to explore the room... what would you to check first? ")
+        explore = input("You being to explore the room... what would you to check first? ", options)
         while explore != "exit":
             if explore == "chair":
                 chair()
