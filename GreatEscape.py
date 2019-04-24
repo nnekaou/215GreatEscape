@@ -59,7 +59,7 @@ def table():
         location = input("Would you like to check the top, inside, or bottom...? (top|inside|bottom|go back) ")
         if location == "top":
             print("You spot a piece of paper, a pencil and some eraser shavings")
-            choice = input("You go to inspect the... (paper|pencil)")
+            choice = input("You go to inspect the... (paper|pencil) ")
             if choice == "paper":
                 print("It looks like a cheat sheet with only useless information... ")
                 time.sleep(2)
@@ -96,7 +96,10 @@ def teacher_desk():
                 time.sleep(2)
             else:
                 print("A rumbling sound comes from.... is that the cabinet?")
+                if 'cabinet' not in options:
+                    options.append('cabinet')
                 time.sleep(2)
+                break
         elif location == "inside":
             print("The inside seems to be locked and needs a key... ")
             time.sleep(2)
@@ -197,16 +200,14 @@ def safe():
 
 def pencil():
     pencil_hint = "ad astra"
-    print("You inspect the pencil...")
     while True:
-        choice = input("Would you like to take the pencil...? (yes|no|go back) ")
+        choice = input("Would you like to pick up the pencil...? (yes|no) ")
         if choice == "yes":
-            print("It looks like someone scratched a message... :" + pencil_hint)
+            print("It looks like someone scratched a message... " + pencil_hint)
             if pencil_hint not in hints:
                 hints.append(pencil_hint)
         elif choice == "no":
             print("You leave the pencil...")
-        elif choice == "go back":
             break
         else:
             print("You inspect the pencil again")
@@ -243,7 +244,7 @@ def main():
                 print("You think about the hints you've found... ", hints)
                 time.sleep(4)
             print("You wonder what you haven't checked and look around... ", options)
-            time.sleep(4)
+            time.sleep(2)
             explore = input("A small violin plays in the background... you begin to approach the... (enter object) ")
     else:
         print("Then I guess you'll be here forever...")
