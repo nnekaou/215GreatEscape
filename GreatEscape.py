@@ -20,6 +20,7 @@ class player:
 
 hints = []
 options = ['chair','table','teacher\'s desk','board','laptop','cabinet','hints']
+inventory = []
 
 # create each object and add prompts for interacting with each object
 # when the player runs into a hint, it should be saved to their notes stash
@@ -146,8 +147,10 @@ def laptop():
             if enter_laptop == "Stevens1870":
                 print("The laptop opens to a screen with a background that reads '0264'")
                 print("The cabinet grumbles and slowly opens...")
-                options.append('safe')
+                inventory.append('key')
+                options.append('cabinet')
                 time.sleep(3)
+                break
             else:
                 print("The laptop screen goes black and maniacal laughter echoes around you")
                 time.sleep(2)
@@ -169,7 +172,10 @@ def cabinet():
             print("It's just some old supplies and stuff, nothing else important here... ")
             time.sleep(2)
         elif location == "inside":
-            print("Looks like it might need a little budging")
+            if 'key' in inventory:
+                safe()
+            else:
+                print("Looks like it might need a little budging")
             time.sleep(2)
         elif location == "bottom":
             print("The cabinet legs left marks on the ground... looks like it was dragged here")
@@ -189,6 +195,7 @@ def safe():
             code = input("You are prompted with a 4 number pinpad... What are those 4 numbers...? (Enter 4 numbers) ")
             if code == "0264":
                 print("YOU FOUND THE KEY! Congratulations and have a beautiful break(:")
+                exit()
             else:
                 print("Hmm that didn't seem to work... ")
         elif choice == "no":
