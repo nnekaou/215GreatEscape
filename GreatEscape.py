@@ -56,7 +56,7 @@ def table():
     if 'table' in options:
         options.remove('table')
     while True:
-        location = input("Would you like to check the top, inside, or bottom...? (top/inside/bottom/back) ")
+        location = input("Would you like to check the top, inside, or bottom...? (top|inside|bottom|go back) ")
         if location == "top":
             print("You spot a piece of paper, a pencil and some eraser shavings")
             choice = input("You go to inspect the... (paper|pencil)")
@@ -75,7 +75,7 @@ def table():
         elif location == "bottom":
             print("You touch the rough bottom of the desk and feel some bumpy areas only to realize it's old gum.")
             time.sleep(2)
-        elif location == "back":
+        elif location == "go back":
             break
         else:
             print("You inspect the table again")
@@ -85,7 +85,7 @@ def teacher_desk():
     if 'teacher\'s desk' in options:
         options.remove('teacher\'s desk')
     while True:
-        location = input("Would you like to check the top, inside, or bottom...? (top|inside|bottom|back) ")
+        location = input("Would you like to check the top, inside, or bottom...? (top|inside|bottom|go back) ")
         if location == "top":
             print("Here lies the laptop and some papers...")
             choice = input("Would you like to inspect the laptop or papers...? (laptop|papers) ")
@@ -103,7 +103,7 @@ def teacher_desk():
         elif location == "bottom":
             print("There's nothing but dust bunnies down there... nothing too exciting. ")
             time.sleep(2)
-        elif location == "back":
+        elif location == "go back":
             break
         else:
             print("You inspect the teacher's desk again")
@@ -114,7 +114,7 @@ def board():
     if 'board' in options:
         options.remove('board')
     while True:
-        choice = input("Would you like to turn it on...? (yes|no|back) ")
+        choice = input("Would you like to turn it on...? (yes|no|go back) ")
         if choice == "yes":
             print("The smartboard slowly turns on and reveals another clue!...")
             print("On the board it says: " + board_hint)
@@ -125,7 +125,7 @@ def board():
         elif choice == "no":
             print("The smartboard is off and will continue to stay off")
             time.sleep(2)
-        elif choice == "back":
+        elif choice == "go back":
             break
         else:
             print("You inspect the board again")
@@ -136,7 +136,7 @@ def laptop():
     if 'laptop' in options:
         options.remove('laptop')
     while True:
-        choice = input("Would you like turn it on...? (yes|no|back) ")
+        choice = input("Would you like turn it on...? (yes|no|go back) ")
         if choice == "yes":
             print("You attempt to turn on the laptop but sadly it is protected by a password")
             enter_laptop = input("Can you crack the code? Enter the password...")
@@ -151,7 +151,7 @@ def laptop():
         elif choice == "no":
             print("You inspect it... it's odd that somebody left their laptop here huh?... ")
             time.sleep(2)
-        elif choice == "back":
+        elif choice == "go back":
             break
         else:
             print("You inspect the laptop again")
@@ -161,7 +161,7 @@ def cabinet():
     if 'cabinet' in options:
         options.remove('cabinet')
     while True:
-        location = input("Would you like to check the top, inside, or bottom...? (top|inside|bottom|back) ")
+        location = input("Would you like to check the top, inside, or bottom...? (top|inside|bottom|go back) ")
         if location == "top":
             print("It's just some old supplies and stuff, nothing else important here... ")
             time.sleep(2)
@@ -171,7 +171,7 @@ def cabinet():
         elif location == "bottom":
             print("The cabinet legs left marks on the ground... looks like it was dragged here")
             time.sleep(2)
-        elif location == "back":
+        elif location == "go back":
             break
         else:
             print("You inspect the cabinet again")
@@ -181,7 +181,7 @@ def safe():
     if 'safe' in options:
         options.remove('safe')
     while True:
-        choice = input("Would you like to open it...? (yes|no|back)")
+        choice = input("Would you like to open it...? (yes|no|go back)")
         if choice == "yes":
             code = input("You are prompted with a 4 number pinpad... What are those 4 numbers...? (Enter 4 numbers) ")
             if code == "0264":
@@ -190,7 +190,7 @@ def safe():
                 print("Hmm that didn't seem to work... ")
         elif choice == "no":
             print("You ignore the safe... ")
-        elif choice == "back":
+        elif choice == "go back":
             break
         else:
             print("You inspect the safe again")
@@ -199,14 +199,14 @@ def pencil():
     pencil_hint = "ad astra"
     print("You inspect the pencil...")
     while True:
-        choice = input("Would you like to take the pencil...? (yes|no|back) ")
+        choice = input("Would you like to take the pencil...? (yes|no|go back) ")
         if choice == "yes":
             print("It looks like someone scratched a message... :" + pencil_hint)
             if pencil_hint not in hints:
                 hints.append(pencil_hint)
         elif choice == "no":
             print("You leave the pencil...")
-        elif choice == "back":
+        elif choice == "go back":
             break
         else:
             print("You inspect the pencil again")
@@ -224,7 +224,8 @@ def main():
         print("Somewhere in this room, there lies a key, you need this key to escape, you can try to break the door but it won’t work, no one is coming for you, solve the puzzle and it is your only way to escape >:D")
         print("You begin to explore the room...")
         print("You can exit this game at any time by entering 'exit' and check your list of hints at any time by entering 'hints'")
-        explore = input("You being to explore the room... what would you to check first? ", options)
+        print("So many items to explore ", options)
+        explore = input("You being to explore the room... what would you to check first? ")
         while explore != "exit":
             if explore == "chair":
                 chair()
