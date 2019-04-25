@@ -214,7 +214,8 @@ def laptop():
                 print("The laptop opens to a screen with a background that reads '0264'")
                 print("The cabinet grumbles and slowly opens...")
                 inventory.append('key')
-                options.append('cabinet')
+                if 'cabinet' not in options:
+                    options.append('cabinet')
                 time.sleep(3)
                 break
             else:
