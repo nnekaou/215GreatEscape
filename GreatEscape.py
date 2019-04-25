@@ -10,29 +10,20 @@ The goal of this project is to create an escape room for individuals to go throu
 """
 import time
 
-# create space for player to save name, keep track of hints, and maybe keep track of current location
-class player:
-    def __init__(self, name, hints, position):
-        self.name = name
-        self.hints = hints
-
-# ^need to know how to set up player info of if it matters
-
 hints = []
 options = ['chair','table','teacher\'s desk','board','laptop','cabinet','hints']
 inventory = []
-
-# create each object and add prompts for interacting with each object
-# when the player runs into a hint, it should be saved to their notes stash
 
 def chair():
     chair_hint = "'HTML, but make it Proper'"
     print("You approach the chair...")
     print("  i______i\n  I______I\n  I      I\n  I______I\n /      /I\n(______( I\nI ^    I ^\nI      I")
+    time.sleep(3)
+    
     if 'chair' in options:
         options.remove('chair')
     while True:
-        location = input("Would you like to check the top, side, or bottom...? (top/side/bottom/back) ")
+        location = input("Would you like to check the top, side, or bottom...? (top|side|bottom|go back) ")
         if location == "top":
             print("It's a slightly worn out chair, nothing special on top. The seats still a little warm...")
             time.sleep(2)
@@ -45,7 +36,7 @@ def chair():
             if chair_hint not in hints:
                 hints.append(chair_hint)
             time.sleep(2)
-        elif location =="back":
+        elif location =="go back":
             break
         else:
             print("You inspect the chair again")
@@ -54,6 +45,29 @@ def table():
     table_hint = "'It is when it came first but now it is second, it started the clock for us all to be beckoned'"
     
     print("It's a pretty average table ... there are many like it in this classroom but you are drawn to this one")
+    print("                  M"
+    "\n                 ' `"
+    "\n                |  :|`-._"
+    "\n                |  :|`-._`-._"
+    "\n               /   ::\   `-._`-._"
+    "\n              /     ::\      `-(_)"
+    "\n             |_________|      / /"
+    "\n                 `-'         / /"
+    "\n                            / /"
+    "\n                           / /"
+    "\n                          / /"
+    "\n         ________________/ _&_______"
+    "\n        /                `'        /"
+    "\n       /          ____________    /"
+    "\n      /'  /\     /           /   /"
+    "\n     /  . \ \   /           /   /"
+    "\n    /  //  \ \ /           /   /"
+    "\n   /  //    \ \___________/   /"
+    "\n  / ///      \ \       __    /"
+    "\n /  `'        \/      /_/  ./"
+    "\n/___.____________________._/")
+    time.sleep(3)
+    
     if 'table' in options:
         options.remove('table')
     while True:
@@ -83,6 +97,32 @@ def table():
 
 def teacher_desk():
     print("You approch the teacher's desk...")
+    print("__]_____]____]_____]______]_______]_____]______]______]______]___]"
+        "\n             _                       _______  |||\"||;;|.||##||=|||"
+        "\n  _                           _     |   *  3| |||-|| =|-||==||+|||"
+        "\n  ____________       _              |       | |||_||__|_||__||_|||"
+        "\n|`.   --__     `.        _______    |       | ||================||"
+        "\n|  `._____________`.  .'|.-----.|   _ ======| ||| | -|&|^^|!!|-|||"
+        "\n|   | .-----------.| |  ||     ||  (o))   _ | ||| |**|=|+-|##|=|||"
+        "\n|   | |  .-------.|| |  ||     ||  /||   / \`._|  .-.|_|__|__|_|||"
+        "\n|   | |  |       |||_`..|'_____'| //||___\_/.'\| (( ))==========||"
+        "\n|   | |`.|  ==== ||| | `---------(o)||         \  /-'-=|+|.-|-'|||"
+        "\n|`. | |`.|_______|||/|______________||__.--._ (o)/|=|;:|-|&&|&&|||"
+        "\n|  `|_|===========||_|                 (____)-.'(o)_|__|_|__|__|||"
+        "\n|   | |  .-------.||                           `._\=============||"
+        "\n|   | |  |       |||                             `.     |       ||"
+        "\n|   | |`.|  ==== |||`._____________________________`.  o|o      ||"
+        "\n|`. | |`.|_______||| |._.----------------.__.-------.|__|_______||"
+        "\n|  `|_|===========|| || '----------------'  | .---. ||  __"
+        "\n|   | |  .-------.|| ||               |     |_______||.'\.'."
+        "\n|   | |  |       ||| || ______________|     | .---. ||'.__.'"
+        "\n|   | |`.|  ==== ||| ||                `.   |_______|||  _ |"
+        "\n `. | |`.|_______||| ||                  `. | .---. |||_  ||"
+        "\n   `|_|========LGB||`||                    `|_______|||____|"
+        "\n                       `.                    `."
+        "\n                         `.____________________`.")
+    time.sleep(3)
+    
     if 'teacher\'s desk' in options:
         options.remove('teacher\'s desk')
     while True:
@@ -115,6 +155,30 @@ def teacher_desk():
 def board():
     board_hint = "'To truly be free you must first find the keys to your success.'"
     print("You walk up to the smartboard and look at it...")
+    print("   _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._"
+        "\n ,'_.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._`."
+        "\n( (                                                         ) )"
+        "\n ) )                                                       ( ("
+        "\n( (                                                         ) )"
+        "\n ) )                                                       ( ("
+        "\n( (                                                         ) )"
+        "\n ) )                                                       ( ("
+        "\n( (                                                         ) )"
+        "\n ) )                                                       ( ("
+        "\n( (                                                         ) )"
+        "\n ) )                                                       ( ("
+        "\n( (                                                         ) )"
+        "\n ) )                                                       ( ("
+        "\n( (                                                         ) )"
+        "\n ) )                                                       ( ("
+        "\n( (                                                         ) )"
+        "\n ) )                                                       ( ("
+        "\n( (                                                         ) )"
+        "\n ) )                                                       ( ("
+        "\n( (_.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._) )"
+        "\n `._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._,'")
+    time.sleep(3)
+    
     if 'board' in options:
         options.remove('board')
     while True:
@@ -137,6 +201,8 @@ def board():
 def laptop():
     print("You inspect the laptop...")
     print("   .===========.       \n   |           |        \n   |   |***|   |        \n   |           |        \n   |___________|        \n   |_________-_|_,-.    \n  [_____________]   )   \n  .,,,,,,,,,, ,,.  (_   \n /,,,,,,,,,,, ,,,\ (>`\ \n(______.-``-._____) \__)")
+    time.sleep(3)
+    
     if 'laptop' in options:
         options.remove('laptop')
     while True:
@@ -164,6 +230,32 @@ def laptop():
 
 def cabinet():
     print("You walk over to the cabinet...")
+    print("__]_____]____]_____]"
+        "\n             _       "
+        "\n  _                  "
+        "\n  ____________       "
+        "\n|`.   --__     `.    "
+        "\n|  `._____________`. "
+        "\n|   | .-----------.| "
+        "\n|   | |  .-------.|| "
+        "\n|   | |  |       ||| "
+        "\n|   | |`.|  ==== ||| "
+        "\n|`. | |`.|_______||| "
+        "\n|  `|_|===========|| "
+        "\n|   | |  .-------.|| "
+        "\n|   | |  |       ||| "
+        "\n|   | |`.|  ==== ||| "
+        "\n|`. | |`.|_______||| "
+        "\n|  `|_|===========|| "
+        "\n|   | |  .-------.|| "
+        "\n|   | |  |       ||| "
+        "\n|   | |`.|  ==== ||| "
+        "\n `. | |`.|_______||| "
+        "\n   `|_|========LGB|| "
+        "\n                     "
+        "\n                     ")
+    time.sleep(3)
+
     if 'cabinet' in options:
         options.remove('cabinet')
     while True:
@@ -187,6 +279,29 @@ def cabinet():
 
 def safe():
     print("A safe inside the cabinet? Who would have thought...")
+    print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        "\n8                                                   8"
+        "\n8                                                   8"
+        "\n8                                                   8"
+        "\n8                      ,aaaaa,                      8"
+        "\n8                    ad':::::'ba                    8"
+        "\n8                  ,d::;gPPRg;::b,                  8"
+        "\n8                  d::dP'   `Yb::b                  8"
+        "\n8                  8::8)     (8::8                  8"
+        "\n8                  Y;:Yb     dP:;P                  8"
+        "\n8                  `Y;:'8ggg8':;P'                  8"
+        "\n8                    'Yaa:::aaP'                    8"
+        "\n8                       '''''                       8"
+        "\n8                                                   8"
+        "\n8                                                   8"
+        "\n8                                                   8"
+        "\n8                       8:::8                       8"
+        "\n8                       8:::8                       8"
+        "\n8                       8:::8                       8"
+        "\n8                       8:::8                       8"
+        "\n8                                                   8"
+        "\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    
     if 'safe' in options:
         options.remove('safe')
     while True:
@@ -206,13 +321,20 @@ def safe():
             print("You inspect the safe again")
 
 def pencil():
-    pencil_hint = "ad astra"
+    pencil_hint = "Go Ducks!"
     while True:
         choice = input("Would you like to pick up the pencil...? (yes|no) ")
         if choice == "yes":
+            print("        . "
+        "\n       // "
+        "\n      // "
+        "\n    ///  "
+        "\n    `'   ")
+            time.sleep(2)
+
             print("It looks like someone scratched a message... " + pencil_hint)
             if pencil_hint not in hints:
-                hints.append(pencil_hint)
+                    hints.append(pencil_hint)
         elif choice == "no":
             print("You leave the pencil...")
             break
@@ -229,9 +351,11 @@ def main():
     begin = input("yes|no... ")
 
     if begin.lower() == "yes":
-        print("Somewhere in this room, there lies a key, you need this key to escape, you can try to break the door but it won’t work, no one is coming for you, solve the puzzle and it is your only way to escape >:D")
+        print("Somewhere in this room, there lies a key, you need this key to escape.\n You can try to break the door but it won’t work.\n No one is coming for you, solve the puzzle and it is your only way to escape >:D")
+        time.sleep(1)
         print("You begin to explore the room...")
         print("You can exit this game at any time by entering 'exit' and check your list of hints at any time by entering 'hints'")
+        time.sleep(2)
         print("So many items to explore ", options)
         explore = input("You being to explore the room... what would you to check first? ")
         while explore != "exit":
@@ -251,7 +375,7 @@ def main():
                 print("You think about the hints you've found... ", hints)
                 time.sleep(4)
             print("You wonder what you haven't checked and look around... ", options)
-            time.sleep(2)
+            time.sleep(1)
             explore = input("A small violin plays in the background... you begin to approach the... (enter object) ")
     else:
         print("Then I guess you'll be here forever...")
